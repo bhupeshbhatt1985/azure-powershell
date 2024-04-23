@@ -78,7 +78,12 @@ jobs:
 
   - task: EsrpCodeSigning@5
     inputs:
-      ConnectedServiceName: '$(signServiceConnection)'
+      ConnectedServiceName: 'azureps-infra-sp'
+      AppRegistrationClientId: '65e141a5-0d40-450d-abd5-d9eef9ed151d'
+      AppRegistrationTenantId: '72f988bf-86f1-41af-91ab-2d7cd011db47'
+      AuthAKVName: 'azure-tools-kv'
+      AuthCertName: 'Certificate-azcli-ESRP'
+      AuthSignCertName: 'Certificate-azcli-ESRP'
       FolderPath: 'artifacts'
       Pattern: |
         Release/**/Microsoft*Azure*PowerShell*Cmdlets*.dll
@@ -137,7 +142,12 @@ jobs:
   - task: EsrpCodeSigning@5
     displayName: 'Sign 3rd Party [Strong Name]'
     inputs:
-      ConnectedServiceName: '$(signServiceConnection)'
+      ConnectedServiceName: 'azureps-infra-sp'
+      AppRegistrationClientId: '65e141a5-0d40-450d-abd5-d9eef9ed151d'
+      AppRegistrationTenantId: '72f988bf-86f1-41af-91ab-2d7cd011db47'
+      AuthAKVName: 'azure-tools-kv'
+      AuthCertName: 'Certificate-azcli-ESRP'
+      AuthSignCertName: 'Certificate-azcli-ESRP'
       FolderPath: artifacts
       Pattern: 'Release/**/FuzzySharp.dll'
       UseMinimatch: true
