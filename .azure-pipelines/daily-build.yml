@@ -78,7 +78,7 @@ jobs:
 
   - task: EsrpCodeSigning@5
     inputs:
-      ConnectedServiceName: 'azureps-infra-sp'
+      ConnectedServiceName: 'esrp-kv-connection'
       AppRegistrationClientId: '65e141a5-0d40-450d-abd5-d9eef9ed151d'
       AppRegistrationTenantId: '72f988bf-86f1-41af-91ab-2d7cd011db47'
       AuthAKVName: 'azure-tools-kv'
@@ -142,7 +142,7 @@ jobs:
   - task: EsrpCodeSigning@5
     displayName: 'Sign 3rd Party [Strong Name]'
     inputs:
-      ConnectedServiceName: 'azureps-infra-sp'
+      ConnectedServiceName: 'esrp-kv-connection'
       AppRegistrationClientId: '65e141a5-0d40-450d-abd5-d9eef9ed151d'
       AppRegistrationTenantId: '72f988bf-86f1-41af-91ab-2d7cd011db47'
       AuthAKVName: 'azure-tools-kv'
